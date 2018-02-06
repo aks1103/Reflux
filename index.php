@@ -39,8 +39,7 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
       <link rel="icon" href="img/logo_square.ico" type="image/x-icon">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      
+
   </head>
 
   <style>
@@ -534,35 +533,6 @@ EOL;
                       </div>
 
 
-
-
-
-
-
-<!--
-                      <div class="cbp-item identity web-design">
-                          <div class="cbp-caption">
-                              <div class="cbp-caption-defaultWrap">
-                                  <img src="img/competitions/Industrial-design-icon.jpg" alt="">
-                              </div>
-                              <div class="cbp-caption-activeWrap">
-                                  <div class="cbp-l-caption-alignCenter">
-                                      <div class="cbp-l-caption-body">
-                                          <a href="ajax/competition4.html" class="cbp-singlePage cbp-l-caption-buttonLeft">more info</a>
-                                          <!-- <a href="https://www.youtube.com/watch?v=3wbvpOIIBQA" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Bills Bills Bills<br>by Cosmin Capitanu">view video</a> 
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="cbp-l-grid-projects-title">IDP</div>
-                          <div class="cbp-l-grid-projects-desc"></div>
-                      </div>
-
--->
-
-
-
-
                       <div class="cbp-item identity logos">
                           <div class="cbp-caption">
                               <div class="cbp-caption-defaultWrap">
@@ -916,6 +886,7 @@ EOL;
 
 
                 <!-- jQuery-->
+                <script src="js/jquery.min.js"></script>
                 <script src="js/jquery-migrate.min.js"></script>
                 <script src="bootstrap/js/bootstrap.min.js"></script>
                 <script src="js/jquery.easing.1.3.min.js" type="text/javascript"></script>
