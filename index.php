@@ -39,7 +39,11 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
       <link rel="icon" href="img/logo_square.ico" type="image/x-icon">
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> 7ed0979f0aeb934b37f0e7e5eddc2a21ae54d1b0
   </head>
 
   <style>
