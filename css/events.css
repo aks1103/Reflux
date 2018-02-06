@@ -1,0 +1,32 @@
+body
+{
+    background-color: #333;
+    background-image: url("../images/bg/steel.jpg");
+    background-attachment: fixed;
+}
+.page-content {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+#events_menu {
+    padding-top: 2%; 
+}
+#events_menu .title {
+    color: hsl(180,75%,41%);
+    font-weight: 400;
+}
+@media (max-width: 991px) { 
+    .listPane {
+        background-image: url("../images/bg/steel.jpg");
+    }
+}   
+
+/* Timeline setting */
+#events_menu .cd-timeline-block img {
+	cursor: pointer;
+}
+#events_menu .cd-timeline-block h3 {
+	cursor: pointer;
+}

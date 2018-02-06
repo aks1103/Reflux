@@ -1,0 +1,414 @@
+body {
+    overflow-x: hidden;
+    background-color: #C0392B;
+}
+.page-content {
+    padding-top: 60px;
+    background-image: url("../images/bg/bg-cloud.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 100%;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* #homeWrapper {
+    min-height: 90vh;
+    min-height: -webkit-calc( 100vh - 50px );
+    min-height: -moz-calc( 100vh - 50px );
+    min-height: -o-calc( 100vh - 50px );
+    min-height: calc( 100vh - 50px );
+}
+#home .container > div {
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    width: inherit;    
+    color: white;
+    min-height: 80vh;
+    min-height: -webkit-calc( 80vh - 50px );
+    min-height: -moz-calc( 80vh - 50px );
+    min-height: -o-calc( 80vh - 50px );
+    min-height: calc( 80vh - 50px );
+}
+#home .container > div > div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+#home #links {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    background-color: #ccc;
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;    
+    color: white;
+} */
+#home > div {
+    display: table;
+    text-align: center;
+    vertical-align: middle;
+    width: inherit;
+    min-height: 90vh;
+    min-height: -webkit-calc( 100vh - 50px );
+    min-height: -moz-calc( 100vh - 50px );
+    min-height: -o-calc( 100vh - 50px );
+    min-height: calc( 100vh - 50px );
+    color: white;    
+}
+#home > div > div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto auto;
+}
+#home a {
+    color: yellow;
+}
+#home a:hover {
+    color: yellow;
+}
+#home a:visited {
+    color: yellow;
+}
+
+.hollowBtn {    
+    color: #eee;
+    /*color: hsl(60,80%,50%);*/
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.hollowBtn:hover {
+    color: #fff;
+    /*color: hsl(60,80%,50%);*/
+    cursor: pointer;
+}
+.hollowBtn.red {
+    border: 2px solid hsla(5,63%,46%,1);
+    background-color: hsla(5,63%,46%,0.7);
+}
+.hollowBtn.red:hover {
+    background-color: hsla(5,63%,40%,0.9);
+}
+.hollowBtn.green {
+    border: 2px solid hsla(145,63%,41%,1);
+    background-color: hsla(145,63%,41%,0.6);
+}
+.hollowBtn.green:hover {
+    background-color: hsla(145,63%,35%,0.9);
+}
+.hollowBtn.yellow {
+    border: 2px solid hsl(48,88%,50%);
+    background-color: hsla(48,88%,50%,0.4);
+}
+.hollowBtn.yellow:hover {
+    background-color: hsla(48,88%,50%,0.7);
+}
+.hollowBtn.blue {
+    border: 2px solid hsl(207,56%,45%);
+    background-color: hsla(207,56%,45%,0.6);
+}
+.hollowBtn.blue:hover {
+    background-color: hsla(207,56%,45%,0.8);
+}
+
+
+
+
+/* About section */
+#about {
+    width: 100%;
+    background-color: #13866F;
+    opacity: 1;
+    color: hsl(210,70%,5%);
+    /*color: brown;*/
+    font-size: 1.4em;
+    text-align: justify;
+    padding-top: 3%;
+    padding-bottom: 1%;
+}
+#about h2 {
+    color: white;
+    text-align: center;
+}
+
+
+
+
+/* Events section */
+#activities {
+    width: 100%;
+    background-color: #203470;
+    opacity: 0.9;
+    color: white;
+    font-size: 1.1em;
+}
+#activities h2 {
+    color: #F1C40F;
+}
+
+
+
+
+
+
+
+/* Sponsor section */
+#sponsors {
+    background-color: #E67E22;
+    min-height: 100px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+#sponsors img {
+    width: 150px;
+    max-width: 100%;
+    /*height: 80px;*/
+    /*max-height: 80px;*/
+}
+#sponsors a[href="//www.rgppl.com"] img {
+    width: 100px;
+    max-width: 100%;
+}
+#sponsors a[href="//www.nrl.co.in"] img {
+    max-width: 100px;
+    max-height: 100px;
+}
+#sponsors a[href="//www.facebook.com/YourMerchandise"] img {
+    max-width: 100px;
+    max-height: 100px;
+}
+#sponsors a[href="//www.zaffingo.com"] img {
+    max-width: 100px;
+    max-height: 100px;
+}
+#sponsors .clearfix div {
+    margin-top: 30px;
+}
+.sponser-text {
+    font-size: 1.2em;
+    color: #eee;
+}
+@media (max-width:767px) {
+    .sponser-text { font-size: 1em; }
+}
+
+
+
+
+
+/* Gallery section */
+#gallery {
+    width: 100%;
+    padding-bottom: 3%;
+    background-color: brown;
+}
+#gallery .uppercase {
+    color: #3498DB;
+}
+#gallery .subtitle {
+    color: #27AE60;
+}
+#galleryBox {
+    width: 700px;
+    height: 467px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    background-color: #666;
+    box-shadow: 0 0 20px #110;
+}
+#galleryCarousel {
+    width: 100%;
+    height: 100%;
+}
+#gallery .carousel img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+@media (min-width:992px) and (max-width:1199px) {
+    #galleryBox { width: 600px; height: 400px; }
+}
+@media (min-width:768px) and (max-width:991px) {
+    #galleryBox { width: 500px; height: 333px; }
+}
+@media (min-width:500px) and (max-width:767px) {
+    #galleryBox { width: 400px; height: 267px; }
+}
+@media (min-width:300px) and (max-width:499px) {
+    #galleryBox { width: 250px; height: 167px; }
+}
+@media (max-width:299px) {
+    #galleryBox { width: 200px; height: 133px; }
+}
+
+
+
+
+
+
+
+/* Team section */
+#team {
+    width: 100%;
+    background-color: #2ECC71;
+    opacity: 0.9;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+#team h2 {
+    color: #C0392B;
+}
+#team .team-card img {
+    border-radius: 50%;
+    box-shadow: 0 0 20px #110;
+}
+#team .team-card .member-name {
+    font-weight: 700;
+    font-size: 1.3em;
+    color: #000;
+}
+#team .team-card .member-post {
+    font-weight: 700;
+}
+#team .social-buttons li {
+    margin: 0;
+    padding: 0;
+}
+#team .social-buttons i {
+    width: 2em; height: 2em;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #34495E;
+    color: white;
+    transition: background-color 0.5s;
+}
+#team .social-buttons a:hover {
+    text-decoration: none;
+}
+#team .social-buttons a:hover i {
+    background-color: #8E44AD;
+}
+
+
+
+
+
+
+
+
+/* Contact section */
+#contact {
+    background-image: url("../images/bg/bg-footer_dark.jpg");
+    background-position: 50% 100%;
+    background-attachment: fixed;
+    width: 100%;
+    padding-top: 2%;
+    color: white;
+}
+#contact > div {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#contact .social-buttons {
+    font-size: 1.5em;
+}
+#contact .social-buttons i {
+    width: 2em; height: 2em;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: white;
+    transition: background-color 0.5s;
+}
+#contact .social-buttons a:hover {
+    text-decoration: none;
+}
+#contact .social-buttons a:hover i {
+    background-color: orange;
+}
+
+#messageNotice {
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* Slant section separators */
+
+.wedge {
+    max-width: 100%;
+    height: 100px;
+}
+.triangle {
+    /* top right bottom left */
+    position: absolute;
+    margin: 0px;
+    max-width: 100%;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 50px 50vw 50px 50vw;
+}
+@media (min-width:992px) and (max-width:1199px) {
+    .wedge { height: 80px; }
+    .triangle { border-width: 40px 50vw 40px 50vw; }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .wedge { height: 60px; }
+    .triangle { border-width: 30px 50vw 30px 50vw; }
+}
+@media (min-width:350px) and (max-width:767px) {
+    .wedge { height: 40px; }
+    .triangle { border-width: 20px 50vw 20px 50vw; }
+}
+@media (max-width:349px) {
+    .wedge { height: 30px; }
+    .triangle { border-width: 15px 50vw 15px 50vw; }
+}
+
+#about-activities-wedge .triangle {
+    border-color: #13866F #13866F hsla(225,55%,28%,0.9) hsla(225,55%,28%,0.9);
+}
+#activities-sponsors-wedge .triangle {
+    border-color: hsla(225,55%,28%,0.9) hsla(225,55%,28%,0.9) #E67E22 #E67E22;
+}
+#sponsors-gallery-wedge .triangle {
+    border-color: #E67E22 #E67E22 brown #E67E22;
+    /*border-color: #E67E22 #E67E22 hsla(145,63%,49%,0.9) #E67E22;*/
+}
+
+
+
+/* Animated typing */
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

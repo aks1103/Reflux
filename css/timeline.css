@@ -1,0 +1,378 @@
+/* If blocks are to be displayed on both side of vertical line in all screens */
+
+/*#cd-timeline {*/
+/*  width: 90%;*/
+/*  max-width: 1170px;*/
+/*  margin: 0 auto;*/
+/*  position: relative;*/
+/*  padding: 2em 0;*/
+/*  margin-top: 2em;*/
+/*  margin-bottom: 2em;*/
+/*}*/
+/*#cd-timeline::after {*/
+/*  content: '';*/
+/*  display: table;*/
+/*  clear: both;*/
+/*}*/
+/*#cd-timeline::before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 50%;*/
+/*  margin-left: -2px;*/
+/*  height: 100%;*/
+/*  width: 4px;*/
+/*  background: #d7e4ed;*/
+/*}*/
+
+/*.cd-timeline-block {*/
+/*  position: relative;*/
+/*  margin: 2em 0;*/
+/*}*/
+/*.cd-timeline-block:after {*/
+/*  content: "";*/
+/*  display: table;*/
+/*  clear: both;*/
+/*}*/
+/*.cd-timeline-block:first-child {*/
+/*  margin-top: 0;*/
+/*}*/
+/*.cd-timeline-block:last-child {*/
+/*  margin-bottom: 0;*/
+/*}*/
+
+/*.cd-timeline-img {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 50%;*/
+/*  margin-left: -20px;*/
+/*  margin-left: -2vw;*/
+/*  width: 40px;*/
+/*  height: 40px;*/
+/*  width: 4vw;*/
+/*  height: 4vw;*/
+/*  border-radius: 50%;*/
+/*  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);*/
+/*  box-shadow: 0 0 0 0.5vw white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);*/
+/*  -webkit-transform: translateZ(0);*/
+/*  -webkit-backface-visibility: hidden;*/
+/*}*/
+/*.cd-timeline-img.cd-blue {*/
+/*  background: #0B3A5B;*/
+/*}*/
+/*.cd-timeline-img.cd-teal {*/
+/*  background: teal;*/
+/*}*/
+/*.cd-timeline-img.cd-green {*/
+/*  background: #75ce66;*/
+/*}*/
+/*.cd-timeline-img.cd-yellow {*/
+/*  background: yellow;*/
+/*}*/
+/*.cd-timeline-img.cd-gold {*/
+/*  background: #f0ca45;*/
+/*}*/
+/*.cd-timeline-img.cd-orange {*/
+/*  background: orange;*/
+/*}*/
+/*.cd-timeline-img.cd-red {*/
+/*  background: #c03b44;*/
+/*}*/
+
+/*.cd-timeline-content {*/
+/*  position: relative;*/
+/*  margin-left: 60px;*/
+/*  background: white;*/
+/*  border-radius: 0.25em;*/
+/*  padding: 1em; padding-bottom: 0;*/
+/*  box-shadow: 0 3px 0 #d7e4ed;*/
+/*  text-align: center;*/
+/*}*/
+/*.cd-timeline-content:after {*/
+/*  content: "";*/
+/*  display: table;*/
+/*  clear: both;*/
+/*}*/
+/*.cd-timeline-content img {*/
+/*    margin: auto auto;*/
+/*}*/
+/*.cd-timeline-content h2 {*/
+/*  color: #303e49;*/
+/*}*/
+/*.cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {*/
+/*  display: inline-block;*/
+/*}*/
+/*.cd-timeline-content p {*/
+/*  margin: 1em 0;*/
+/*  line-height: 1.6;*/
+/*}*/
+/*.cd-timeline-content .cd-read-more {*/
+/*  float: right;*/
+/*  padding: .8em 1em;*/
+/*  background: #acb7c0;*/
+/*  color: white;*/
+/*  border-radius: 0.25em;*/
+/*}*/
+/*.no-touch .cd-timeline-content .cd-read-more:hover {*/
+/*  background-color: #bac4cb;*/
+/*}*/
+/*.cd-timeline-content .cd-date {*/
+/*  float: left;*/
+/*  padding: .8em 0;*/
+/*  opacity: .7;*/
+/*}*/
+/*.cd-timeline-content::before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  top: 16px;*/
+/*  right: 100%;*/
+/*  height: 0;*/
+/*  width: 0;*/
+/*  border: 7px solid transparent;*/
+/*  border-right: 7px solid white;*/
+/*}*/
+/*.cd-timeline-content {*/
+/*  margin-left: 0;*/
+/*  padding-top: 1.5em;  padding-bottom: 0;*/
+/*  width: 45%;*/
+/*}*/
+/*.cd-timeline-content::before {*/
+/*  top: 24px;*/
+/*  left: 100%;*/
+/*  border-color: transparent;*/
+/*  border-left-color: white;*/
+/*}*/
+/*.cd-timeline-content .cd-read-more {*/
+/*  float: left;*/
+/*}*/
+/*.cd-timeline-content .cd-date {*/
+/*  position: absolute;*/
+/*  width: 100%;*/
+/*  left: 122%;*/
+/*  top: 6px;*/
+/*  font-size: 16px;*/
+/*  font-size: 1rem;*/
+/*}*/
+/*.cd-timeline-block:nth-child(even) .cd-timeline-content {*/
+/*  float: right;*/
+/*}*/
+/*.cd-timeline-block:nth-child(even) .cd-timeline-content::before {*/
+/*  top: 24px;*/
+/*  left: auto;*/
+/*  right: 100%;*/
+/*  border-color: transparent;*/
+/*  border-right-color: white;*/
+/*}*/
+/*.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {*/
+/*  float: right;*/
+/*}*/
+/*.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {*/
+/*  left: auto;*/
+/*  right: 122%;*/
+/*  text-align: right;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*If blocks are to be displayed on one side of vertical line in small screens */
+
+
+#cd-timeline {
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+  padding: 2em 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+#cd-timeline::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+#cd-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: #d7e4ed;
+}
+.cd-timeline-block {
+  position: relative;
+  margin: 2em 0;
+}
+.cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-block:first-child {
+  margin-top: 0;
+}
+.cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 768px) {
+  #cd-timeline::before {
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+
+.cd-timeline-img {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  width: 4vw;
+  height: 4vw;
+  top: 0;
+  left: 18px;
+  margin-left: -10px;
+  margin-left: -2vw;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+.cd-timeline-img.cd-blue {
+  background: #0B3A5B;
+}
+.cd-timeline-img.cd-teal {
+  background: teal;
+}
+.cd-timeline-img.cd-green {
+  background: #75ce66;
+}
+.cd-timeline-img.cd-yellow {
+  background: yellow;
+}
+.cd-timeline-img.cd-gold {
+  background: #f0ca45;
+}
+.cd-timeline-img.cd-orange {
+  background: orange;
+}
+.cd-timeline-img.cd-red {
+  background: #c03b44;
+}
+@media only screen and (min-width: 768px) {
+  .cd-timeline-img {
+    width: 40px;
+    height: 40px;
+    width: 4vw;
+    height: 4vw;
+    left: 50%;
+    margin-left: -20px;
+    margin-left: -2vw;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+
+.cd-timeline-content {
+  position: relative;
+  margin-left: 60px;
+  background: white;
+  border-radius: 0.25em;
+  padding: 1em; padding-bottom: 0;
+  box-shadow: 0 3px 0 #d7e4ed;
+  text-align: center;
+}
+.cd-timeline-content img {
+    margin: auto auto;
+}
+.cd-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.cd-timeline-content h2 {
+  color: #303e49;
+}
+.cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+  display: inline-block;
+}
+.cd-timeline-content p {
+  margin: 1em 0;
+  line-height: 1.6;
+}
+.cd-timeline-content .cd-read-more {
+  float: right;
+  padding: .8em 1em;
+  background: #acb7c0;
+  color: white;
+  border-radius: 0.25em;
+}
+.no-touch .cd-timeline-content .cd-read-more:hover {
+  background-color: #bac4cb;
+}
+.cd-timeline-content .cd-date {
+  float: left;
+  padding: .8em 0;
+  opacity: .7;
+}
+.cd-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid white;
+}
+@media only screen and (min-width: 768px) {
+  .cd-timeline-content {
+    margin-left: 0;
+    padding-top: 1.5em;  padding-bottom: 0;
+    width: 45%;
+  }
+  .cd-timeline-content::before {
+    top: 24px;
+    left: 100%;
+    border-color: transparent;
+    border-left-color: white;
+  }
+  .cd-timeline-content .cd-read-more {
+    float: left;
+  }
+  .cd-timeline-content .cd-date {
+    position: absolute;
+    width: 100%;
+    left: 122%;
+    top: 6px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content {
+    float: right;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+    top: 24px;
+    left: auto;
+    right: 100%;
+    border-color: transparent;
+    border-right-color: white;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+    float: right;
+  }
+  .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+    left: auto;
+    right: 122%;
+    text-align: right;
+  }
+}

@@ -1,0 +1,71 @@
+body
+{
+    background-color: #333;
+    background-image: url("../images/bg/swirl_pattern.jpg");
+    background-attachment: fixed;
+}
+.page-content {
+    padding-bottom: 20px;
+	background-color: hsla(0,0%,95%,0.8);
+	box-shadow: 0 0 20px 0px #666;
+}
+
+
+.title {
+	color: brown;
+	font-weight: 700;
+}
+.title span {
+	color: green;
+	font-weight: 700;
+}
+
+
+#formBox {
+	/*background-color: hsla(204,69%,53%,1);*/
+	padding-top: 2%; 
+	padding-bottom: 2%; 
+}
+
+.section-title {
+	color: #C0392B;
+	font-weight: 700;
+}
+.member-group {
+	display: none;
+}
+
+.customLink {
+	color: #333;	
+}
+
+
+
+#messageNotice {
+    display: none;
+}
+
+
+
+hr {
+	border-color: #999;
+}
+
+.custom-checkbox {
+	background-color: hsla(0,0%,30%,0.8);
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+.custom-checkbox.checked {
+	background-color: hsla(145,63%,41%,0.8);
+}
+
+
+
+
+/*
+#formBox {
+	background-color: hsla(28,79%,51%,0.8);
+}
+*/

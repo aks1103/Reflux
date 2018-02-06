@@ -1,0 +1,108 @@
+* {
+	font-family: 'Titillium Web', sans-serif;
+	/*font-family: 'Overlock SC', cursive;*/
+	font-weight: 300;
+}
+.uppercase { 
+	text-transform: uppercase;
+	font-family: 'Overlock SC', cursive;
+}
+.capitalfont , .capitalfont * {
+	font-family: 'Overlock SC', cursive;
+}
+.dotted {
+	border-bottom: 1px dotted #333;
+}
+.red {
+	color: red;
+}
+.brown {
+	color: brown;
+}
+
+
+.customLink {
+	color: #333;
+	color: initial;
+	cursor: pointer;
+}
+.customLink:hover {
+	text-decoration: none;
+}
+
+blockquote.custom {
+	border-left: 3px solid #D35400;
+	font-size: 1em;
+}
+
+/* Custom Input field*/
+.form-control.customInput {
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	border-bottom: 1px solid #666;
+	background-color: transparent;
+	color: black;
+}
+.form-control.customInput:focus {
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	border-bottom: 1px solid #2ECC71;
+}
+.form-control.customInput::-webkit-input-placeholder { color: #444; }
+.form-control.customInput::-moz-input-placeholder { color: #444; }
+.form-control.customInput::-ms-input-placeholder { color: #444; }
+.form-control.customInput::-o-input-placeholder { color: #444; }
+.form-control.customInput::input-placeholder { color: #444; }
+
+
+
+/* Custom buttons */
+.hollowBtn {
+	text-align: center;
+	font-size: 1.4em;
+	border: 2px solid #333;
+	color: #333;
+	border-radius: 5px;
+	transition: all 0.2s;
+	font-weight: 700;
+}
+.hollowBtn:hover {
+	/*background-color: #444;*/
+	background-color: hsl(204,69%,53%);
+	color: hsla(204,69%,53%,0.7);
+	color: white;
+	cursor: pointer;
+}
+
+.btn-sea {
+	background-color: hsl(168,75%,35%);
+	border: 1px solid hsl(168,75%,10%);
+}
+.btn-sea:hover {
+	background-color: hsl(168,75%,30%);
+}
+.btn-sea , .btn-sea * , .btn-sea:hover , .btn-sea:hover * {
+	color: white;
+}
+.btn-orange {
+	background-color: hsl(28,79%,51%);
+	border: 1px solid hsl(28,79%,10%);
+}
+.btn-orange:hover {
+	background-color: hsl(28,79%,45%);
+}
+.btn-orange , .btn-orange * , .btn-orange:hover , .btn-orange:hover * {
+	color: white;
+}
+.btn-purple {
+	background-color: hsl(282,38%,53%);
+	border: 1px solid hsl(282,38%,10%);
+}
+.btn-purple:hover {
+	background-color: hsl(282,38%,48%);
+}
+.btn-purple , .btn-purple * , .btn-purple:hover , .btn-purple:hover * {
+	color: white;
+}

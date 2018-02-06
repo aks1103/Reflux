@@ -1,0 +1,39 @@
+body
+{
+    background-image: url("../images/bg/bg-footer_dark.jpg");
+    background-position: 50% 100%;
+    background-attachment: fixed;
+}
+
+#contact
+{
+    margin-top: 50px;
+    display: table;
+    color: white;
+    color: white;
+}
+#contact > div
+{
+    width: inherit;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.social-buttons {
+    font-size: 1.5em;
+}
+.social-buttons i {
+    width: 2em; height: 2em;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: white;
+    transition: background-color 0.5s;
+}
+.social-buttons a:hover {
+    text-decoration: none;
+}
+.social-buttons a:hover i {
+    background-color: orange;
+}

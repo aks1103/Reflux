@@ -1,0 +1,29 @@
+body
+{
+    background-image: url("../images/bg/symphony.jpg");
+    background-size: 240px 240px;
+    background-attachment: fixed;
+}
+.uppercase {
+    color: #333;
+}
+
+.jumbotron {
+    background-color: hsla(0,0%,100%,0.6);
+    padding-top: 0.5%;
+    box-shadow: 0 0 20px 0px #666;
+}
+
+.jumbotron h3 {
+    color: brown;
+}
+.jumbotron ul {
+    font-size: 1.2em;
+}
+
+/*#form { display: none; }*/
+#form * { font-size: 1.1em; }
+
+#dateFrom , #dateFrom * , #dateTill , #dateTill * {
+	font-size: 0.9em;
+}

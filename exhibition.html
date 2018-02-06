@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<title>Form</title>
+<style>
+@import url(https://fonts.googleapis.com/css?family='assistant');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body{
+	background:#DEF5FF;
+	font-family: "Assistant", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 30px;
+    color: #777;
+	}
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"] {
+  font: 400 12px/16px "assistant", Helvetica, Arial, sans-serif;
+}
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"] {
+  width: 700px;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 5px 50px 10px;
+  padding: 10px;
+}
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover{
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #16a085;
+  }
+#contact select{
+    width: 700px;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 5px 50px 10px;
+  padding: 10px;
+  font: 400 12px/16px "assistant", Helvetica, Arial, sans-serif;
+}
+#contact select :hover{
+     -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #16a085;
+} 
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+fieldset {
+  border: medium none !important;
+  margin: 0 0 50px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+#contact {
+  background: #F9F9F9;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#contact h2 {
+  margin: 5px 0 15px;
+  display: block;
+  font-size: 20px;
+  font-family:Assistant;
+  font-weight: 850;
+  padding: 20px;
+}
+#contact textarea{
+    font: 400 12px/16px "assistant", Helvetica, Arial, sans-serif;
+    width: 700px;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 5px 50px 10px;
+    padding: 10px;
+}
+#contact textarea:hover{
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #16a085;
+}
+#contact h1 {
+	padding: 55px;
+	background-color: #16a085;
+	color:white;
+	text-align:center;
+	font-family:Assistant;
+	}
+#contact input[type="submit"]{
+  color:white;
+  padding:8px 40px;
+  margin-left:300px;
+  margin-bottom:20px;
+  font-size: 20px;
+  display: inline-block;
+  cursor: pointer;
+  border:none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  }
+#contact input[type="submit"]:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0
+}
+</style>
+<div class="container">
+<form id="contact" enctype="multipart/form-data" method="post" action="exhibition.php">
+    <h1>Exhibition:Reflux'18</h1>
+    <fieldset>
+    <h2>1.Name of first member*</h2>
+    <input type="text" name="name1" placeholder="Enter your answer">
+    </fieldset>
+    <fieldset>
+    <h2>1.Name of second member</h2>
+    <input type="text" name="name2" placeholder="Enter your answer">
+    </fieldset>
+    <fieldset>
+    <h2>1.Name of third member</h2>
+    <input type="text" name="name3" placeholder="Enter your answer">
+    </fieldset>
+    <fieldset>
+    <h2>2. Designation* (B.Tech/M.Tech student etc)</h2>
+    <select name="designation" placeholder="Enter your answer">
+        <option value="B.Tech">B.Tech</option>
+        <option value="B.Des">B.Des</option>
+        <option value="M.Tech">M.Tech</option>
+        <option value="M.Des">M.Des</option>
+        <option value="PhD">PhD</option>
+        <option value="B.Sc">B.Sc</option>
+        <option value="M.Sc">M.Sc</option>
+    </select>
+    </fieldset>
+    <fieldset>
+    <h2>3. Email ID*</h2>
+    <input type="email" name="email" placeholder="Enter your answer">
+    </fieldset>
+    <fieldset>
+    <h2>4. Mobile No*</h2>
+    <input type="text" name="phone" placeholder="Enter your answer">
+    </fieldset>
+    <fieldset>
+    <h2>5. Institute Name *</h2>
+    <input type="text" name="instiname" placeholder="Enter your answer">
+    </fieldset>
+    <fieldset>
+    <h2>8. Title of your exhibition model*</h2>
+    <input type="text" name="description" placeholder="Enter your answer">
+    </fieldset>
+  
+    <fieldset>
+    <h2>9. Brief description of model(in pdf)*</h2>
+    &nbsp;&nbsp;&nbsp;<input type="file"  name="fileToUpload">
+    </fieldset>
+    
+    <input type="submit" name="submit" value="Submit" style="background:#16a085">
+    
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+/*body , .page-content , .page-content>.row {
+	overflow: hidden;
+}*/
+
+
+/* Left nav pane */
+.listPane
+{
+	/*overflow: auto;*/
+	color: white;
+	font-size: 2em;
+	padding-left: 5px;	
+	padding-right: 5px;
+	z-index: 100;
+}
+.listPane>div>div
+{
+	padding-left: 20px;
+	cursor: pointer;
+}
+.listPane>div>div:hover
+{
+	background-color: hsla(0,0%,70%,0.6);
+}
+.listPane>div>div.active
+{
+	background-color: hsla(48,100%,90%,0.2);
+	border-left: 5px solid hsl(48,100%,50%);
+	padding-left: 15px;
+}
+/* Right content pane */
+.contentPane
+{
+	/*overflow: auto;*/
+	background-color: hsla(0,0%,70%,0.5);
+	padding: 0;
+}
+.contentPane > div {
+	display: none;
+}
+
+
+/* Accordion in content pane */
+.panel
+{
+	border: none;
+	border-radius: 0;
+	margin-bottom: 0;
+	background-color: transparent;
+}
+.panel .panel-heading
+{
+	border-top: 1px solid hsla(0,0%,20%,0.9);
+	border-bottom: 0;
+	border-radius: 0;
+	background-color: hsla(0,0%,30%,0.7);
+}
+.panel .panel-heading *
+{
+	color: hsl(48,100%,50%);
+}
+.panel .panel-body
+{
+	border-radius: 0;
+	background-color: hsla(0,0%,70%,0.6);
+	font-size: 1.1em;
+}
+.panel .panel-body a.dotted {
+	text-decoration: none;
+	color: #2C3E50;
+}
+.panel .panel-body p a:hover {
+	text-decoration: none;
+}
+
+
+@media (max-width: 991px) { 
+	.listPane {
+		display: none;
+		width: 100%;
+		min-height: 100%;
+		position: absolute;
+	    background-attachment: fixed;
+	}
+	.hamburgerButton {
+		border-radius:50%;
+		background-color: #1ABC9C;
+		/*border: 2px solid white;*/
+		border: 0;
+		float: left;
+	}
+	.hamburgerButton:hover {
+		background-color: #16A085;
+	}
+}
