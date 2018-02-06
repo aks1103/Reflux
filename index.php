@@ -910,7 +910,7 @@ EOL;
                 <script type="text/javascript" src="js/pace.min.js"></script>
                 <!--revolution slider plugins-->
                 <script src="rs-plugin/js/jquery.themepunch.tools.min.js" type="text/javascript" charset="utf-8"></script>
-                <script src="rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/java charset="utf-8"script"></script>
+                <script src="rs-plugin/js/jquery.themepunch.revolution.min.js" type="text/javascript" charset="utf-8"></script>
                 <script type="text/javascript" src="js/revolution-custom.js"></script>
                 <!--gmap js-->
                 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyBqI2822ODn9hA_8Ovi0LiRhrAJ-sugw-g"></script>
