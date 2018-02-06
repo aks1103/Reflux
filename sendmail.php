@@ -1,5 +1,6 @@
 <?php
 include("config.php");
+echo "running";
 for ($i=27; $i <=54 ; $i++) { 
 	# code...
 if ($i==52||$i==40) {
