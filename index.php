@@ -901,7 +901,7 @@ EOL;
                 <script src="js/owl.carousel.min.js" type="text/javascript" charset="utf-8"></script>
                 <script src="js/one-page.js" type="text/javascript" charset="utf-8"></script>
                 <!--cube portfolio plugin-->
-                <script src="cubeportfolio/js/jquery.cubeportfolio.min.js" type="text/javascript charset="utf-8""></script>
+                <script src="cubeportfolio/js/jquery.cubeportfolio.min.js" type="text/javascript" charset="utf-8"></script>
                 <script src="js/cube-portfolio.js" type="text/javascript" charset="utf-8"></script>
                 <!--cantact form script-->
                 <script src="js/contact_me.js"  type="text/javascript" charset="utf-8"></script>
