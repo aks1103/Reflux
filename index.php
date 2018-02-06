@@ -39,7 +39,6 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
       <link rel="icon" href="img/logo_square.ico" type="image/x-icon">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       
   </head>
 
