@@ -39,6 +39,8 @@
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
       <link rel="icon" href="img/logo_square.ico" type="image/x-icon">
+                <script src="js/jquery.min.js"></script>
+      
   </head>
 
   <style>
@@ -914,7 +916,6 @@ EOL;
 
 
                 <!-- jQuery-->
-                <script src="js/jquery.min.js"></script>
                 <script src="js/jquery-migrate.min.js"></script>
                 <script src="bootstrap/js/bootstrap.min.js"></script>
                 <script src="js/jquery.easing.1.3.min.js" type="text/javascript"></script>
