@@ -1,7 +1,6 @@
 <?php
 include("config.php");
-
-for ($i=37; $i <=37 ; $i++) { 
+for ($i=27; $i <=54 ; $i++) { 
 	# code...
 if ($i==52||$i==40) {
 	# code...
@@ -9,7 +8,7 @@ if ($i==52||$i==40) {
 }
 $sql = 'SELECT id FROM enigma_participants WHERE id = "$i"';
    $retval = $db->query($sql);
-   if ($db->query($sql) === TRUE) {
+   if ($db->query($sql) === TRUE){
    	$retval = $db->query($sql);
    	while($row = $retval->fetch_assoc()){
 $name = mysqli_real_escape_string($db,$row["name"]);
