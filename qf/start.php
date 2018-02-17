@@ -18,9 +18,12 @@
 
     if($isStarted == 0 )
 {
-   $numbers = range(1, 138);
+   $numbers = range(1, 150);
 	shuffle($numbers);
     
+
+    $numbers2 = range(1, 68);
+	shuffle($numbers2);
 
   
 
@@ -30,7 +33,14 @@
 
 	$sql = "UPDATE enigma_participants SET ";
 
-	for($i=1;$i<=45;$i++){
+	for($i=1;$i<=40;$i++){
+
+		$index = $i-1;
+		$sql .= " q$i = $numbers[$index] , ";
+
+	}
+
+	for($i=41;$i<=45;$i++){
 
 		$index = $i-1;
 		$sql .= " q$i = $numbers[$index] , ";

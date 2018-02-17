@@ -1,3 +1,7 @@
+
+
+
+
 <?php
    include("config.php");
    session_start();
@@ -19,7 +23,7 @@
           exit();
       }
       if($count == 1 && $active == "1"){ // only one such user exists & confirmed
-          if(time()>0&&$email!="amantiwari123786@gmail.com"){
+          if(time()>0&&$email!="dummy@dummy.com"){
  echo <<<DET
  <!doctype html>
  <title>Reflux | Quiz</title>
@@ -91,26 +95,26 @@ exit();
     background-repeat:   no-repeat;
     background-position: center center;">
     <script type="text/javascript">
-    	function myFunction()
-    	{		
-		    var x = document.getElementById("passwd");
-		    if (x.type === "password") {
-		        x.type = "text";
-		    } else {
-		        x.type = "password";
-		    }
-		}    	
+      function myFunction()
+      {   
+        var x = document.getElementById("passwd");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }     
     </script>
 
 
 <div class="login-box">
-	<br><br>
+  <br><br>
   <div class="login-logo">
     <center><a href="http://reflux.in"><img src="ref2018.png" style="width: 28vw;" /></a></center>
   </div>
   <!-- /.login-logo --><center>
   <div class="login-box-body" style="width: 30vw;">
-  	<br><br>
+    <br><br>
     <p class="login-box-msg" style="color: white">Sign in to start your session</p>
 <br><br>
     <form action="" method="post">
@@ -122,14 +126,14 @@ exit();
         <input name="password" type="password" id="passwd" class="form-control" placeholder="Password">
         <!-- 
         <div style="color: white">
-        	<input type="checkbox" onclick="myFunction()">Show Password
+          <input type="checkbox" onclick="myFunction()">Show Password
         </div> -->
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         
 
-		<div>
+    <div>
           <div class="checkbox icheck">
             <label style="color: white">
               <input type="checkbox" onclick="myFunction()"> Show Password
@@ -148,7 +152,7 @@ exit();
         </div>
         <!-- /.col -->
         <!-- <div class="col-xs-4"> -->
-       	<div>
+        <div>
           <button type="submit" class="btn btn-primary btn-block btn-flat" style="width: 30vw;">Sign In</button>
         </div>
         <!-- /.col -->
@@ -183,4 +187,3 @@ exit();
 </script>
 </body>
 </html>
-		

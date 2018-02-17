@@ -1,6 +1,7 @@
 <?php
    include('session.php');
 
+
    $sql = "SELECT isEnd FROM enigma_participants WHERE email = '$login_session'";
    $isEnd = 0;
    $retval = $db->query($sql);
@@ -13,7 +14,7 @@
     }
 
 
-    if($isEnd == 1){
+	if($isEnd == 1){
 
     	header("location:thanks.php");
     	exit();
@@ -46,7 +47,7 @@
 
 <?php
 
-	$sql = "SELECT isSet FROM participants_gquiz WHERE email = '$login_session'";
+	$sql = "SELECT isSet FROM enigma_participants WHERE email = '$login_session'";
 	$retval = $db->query($sql);
 	$row = $retval->fetch_assoc();
 
@@ -65,7 +66,7 @@
 			
 		}
 		
-		$sql .= " FROM participants_gquiz WHERE email = '$login_session'";
+		$sql .= " FROM enigma_participants WHERE email = '$login_session'";
 
 		$result = $db->query($sql);
 
@@ -96,14 +97,14 @@
 
 			// echo "$time";
 			
-			$sql = "UPDATE participants_gquiz SET isSet = 1 , time = $time WHERE email = '$login_session'";
+			$sql = "UPDATE enigma_participants SET isSet = 1 , time = $time WHERE email = '$login_session'";
 
 			$db->query($sql);
 
 		
 		}
 
-		$sql = "SELECT time FROM participants_gquiz WHERE email = '$login_session'";
+		$sql = "SELECT time FROM enigma_participants WHERE email = '$login_session'";
 		$startTimeresult = $db->query($sql);
 		$startTime =  $startTimeresult->fetch_assoc()['time'];
 
@@ -203,7 +204,6 @@
 			padding:0;
 			margin: 0;
 			border-width:0;
-			background-color: #ffffff;
 			overflow-x: hidden;	
 		}
 
@@ -298,7 +298,10 @@
 		}
 	</style>
 </head>
-<body>
+<body style="background-image: url(bg.jpg);
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center top;">
 	
 
 	<div class="panel" id="panel" hidden align="center">
@@ -388,17 +391,17 @@ for($i=0 ;$i<45 ;$i++){
 
 	$j = $i +1;
 
-	$name = md5("refE_$questions[$i]")
+	$name = md5("refE_$questions[$i]");
 	echo <<<SOM
 
 	<div id='page$j' hidden>
 <center><h2 style='color:#229955'>Question $j</h2></center>
-		<div class="question"  >
+		<div class="question"  style="width:100%"">
 			
-			<img src="./ques/$name" /><br/><br/>
+			<center><img src="./ques/$name" /></center><br/><br/>
 		
-			<div id='question$j'>
-			<input type='text' placeholder='Answer' name='answer$j' class='answer'/>
+			<div id='question$j' style="width:100%;">
+			<center><input type='text' placeholder='Answer' name='answer$j' class='answer'/></center>
 		  </div>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-<html>	
+<html>
 <head>
 	<title>Reflux | Quiz</title>
 	<style>
@@ -130,7 +130,7 @@
 		    <ol>
 		    	<li>If you close the browser or navigate to other windows or exit the fullscreen then the admin carries the right to terminate the exam.</li>
 		    	<li>In case your browser gets accidently closed them you can resume the quiz by login again.(But you will not be given extra time.)</li>
-		    	<li>In case of any discrepancies decision taken by Team Reflux will be final.</li>
+		    	<li>In case of any discrepancies decision taken by Teamm Reflux will be final.</li>
 
 		    </ol>
 		    <br>
@@ -149,11 +149,11 @@
 
 		<div id="gnrl_ins" >
 			<ul>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
 			</ul>
 		</div>
 	</div>
@@ -164,11 +164,11 @@
 
 		<div id="gnrl_ins">
 			<ul>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
 			</ul>
 		</div>
 	</div>
@@ -179,11 +179,11 @@
 
 		<div id="gnrl_ins">
 			<ul>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
-				<li>Some of the common instruction will be here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
+				<li>Some of the common instruction will br here.</li>
 			</ul>
 		</div>
 	</div>

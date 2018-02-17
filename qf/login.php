@@ -40,13 +40,13 @@ exit();
       $email = mysqli_real_escape_string($db,$_POST['email']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT id , isActive FROM enigma_participants WHERE email = '$email' and password= '$mypassword'";
+      $sql = "SELECT id , paymentstatus FROM enigma_participants WHERE email = '$email' and password= '$mypassword'";
 
       $retval = $db->query($sql);
 
       $row = $retval->fetch_assoc();
 
-      $active = $row["isActive"];
+      $active = $row["paymentstatus"];
       
       $count = $retval->num_rows;
 

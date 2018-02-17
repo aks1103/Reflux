@@ -11,8 +11,8 @@
 
 
     }else{
-    	echo "Invalid credentials or session expired.\n";
-    	echo "NOt";
+    	echo "Invalid credentials or session expired.";
+        exit();
     }
 
 
@@ -131,18 +131,12 @@
 			position:fixed;
 		}
 
-		#gnrl_ins{
-			position:fixed;
-			left: 7vw;
+		#gnrl_ins ul li{			
+                    padding:3px;
 
 		}
 
-		#gnrl_ins ul li{
-			color: #229955;
-			font-size: 3vh;
-			margin: 10px;
-
-		}
+		
 		.heading{
 			padding-top: 10px;
 			margin:0;
@@ -153,8 +147,8 @@
 </head>
 <body>
 	<div>
-		<img id="background" src="quiz.jpg"/>
-	</div>
+<img src="./quiz1.jpg" id="background" />
+</div>
 
 	<div id="myModal" class="modal">
 
@@ -180,18 +174,18 @@
 
 	<div id="page1" hidden>
 
-		<center><h2 class="heading"><u>User Detail</u></h2></center>
-		<center>
-		<div id="gnrl_ins" >
+		<center><h2 class="heading"><u>User Details</u></h2></center>
+		
+		<div id="gnrl_ins">
 			
 				<center><h3>Name : <?php echo "$dname"; ?></h3></center>
 				<center><h3>Email : <?php echo "$demail"; ?></h3></center>
 				<center><h3>Phone : <?php echo "$dphone"; ?></h3></center>
 				
 			<br>
-			<center><p>Verify your details*</p></center>
+			<center><p style="color:#ff2233">Verify your details*</p></center>
 		</div>
-			
+		
 	</div>
 
 	<div id="page2" hidden>
@@ -199,13 +193,12 @@
 		<center><h2 class="heading"><u>General Instruction</u></h2></center>
 
 		<div id="gnrl_ins">
-				<ul>
+			<ul>
 				
 				<li>The Quiz cointains <b>45 questions</b>.</li>
-				<li>First 15 questions(easy) carry +1 marks, next 15 questions(medium) carries +1.5 marks and last 15(hard) carries +2 marks</li>
-				<li>All the questions are of <b>single option correct</b> type.</li>
-				<li>Quiz will be for the duration of <b>30 mins</b>.</li>
-				<li>You will be not be giving another chance for a given Account id.</li>
+				<li>All the questions are of <b>short answer </b> type.</li>
+				<li>Quiz will be for the duration of <b>60 mins</b>.</li>
+				<li>You will be not be given another chance to attempt the quiz using the same email id.</li>
 			</ul>
 		</div>
 	</div>
@@ -338,3 +331,4 @@
 	</script>
 </body>
 </html>
+			
