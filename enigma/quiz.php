@@ -1,7 +1,7 @@
 <?php
    include('session.php');
    session_start();
-   $sql = "SELECT isEnd FROM participants WHERE email = '$login_session'";
+   $sql = "SELECT isEnd FROM enigma_participants WHERE email = '$login_session'";
    $isEnd = 0;
    $retval = $db->query($sql);
     if($retval->num_rows > 0 ){
@@ -19,7 +19,7 @@
     	exit();
     }
 
-   $sql = "SELECT isStarted FROM participants WHERE email = '$login_session'";
+   $sql = "SELECT isStarted FROM enigma_participants WHERE email = '$login_session'";
    $isStarted = 1;
    $retval = $db->query($sql);
     if($retval->num_rows > 0 ){
@@ -46,20 +46,13 @@
 
 <?php
 
-	$sql = "SELECT isSet FROM participants WHERE email = '$login_session'";
+	$sql = "SELECT isSet FROM enigma_participants WHERE email = '$login_session'";
 	$retval = $db->query($sql);
 	$row = $retval->fetch_assoc();
 
 	$isSet = $row["isSet"];
 	$questions = array();
-	$option1 = array();
-	$option2 = array();
-	$option3 = array();
-	$option4 = array();
-
-	
-
-		$sql = "SELECT ";
+	$sql = "SELECT ";
 		for($i=1;$i<=45;$i++){
 		
 		$sql .= " q$i " ;
@@ -68,7 +61,7 @@
 			
 		}
 		
-		$sql .= " FROM participants WHERE email = '$login_session'";
+		$sql .= " FROM enigma_participants WHERE email = '$login_session'";
 
 		$result = $db->query($sql);
 
@@ -78,34 +71,38 @@
 
 			$row = $result->fetch_array();
 			$i =1;
-			for($i=1; $i<=45; $i++) {
+			for($i=1; $i<=40; $i++) {
 				# code...
 			
 
 				$quesno = "q$i";
 				$id = $row[$quesno];
-				$sql = "SELECT question , option1 , option2 , option3 , option4 FROM quiz_questions WHERE id = '$id'";
-				// $q = (($db->query($sql))->fetch_assoc())['question'];
-
-				$datar = $db->query($sql);
-				$data = $datar->fetch_assoc();
+				
+				$numbers = range(1, 150);
+    			shuffle($numbers);
+    			array_slice($numbers, 0, 40);
 
 				
-				$q = $data["question"];
-
-				$o1 = $data["option1"];
-				$o2 = $data["option2"];
-				$o3 = $data["option3"];
-				$o4 = $data["option4"];
+				$q = $numbers[$i];
 
 
 				array_push($questions, $q);
-				array_push($option1, $o1);
-				array_push($option2, $o2);
-				array_push($option3, $o3);
-				array_push($option4, $o4);
+				
 				
 
+			}
+			for ($i=41; $i <46 ; $i++) { 
+				# code...
+				$numbers = range(1, 69);
+    			shuffle($numbers);
+    			array_slice($numbers, 0, 5);
+
+				
+				$q = $numbers[$i];
+
+
+				array_push($questions, $q);
+				
 			}
 		}
 
@@ -118,18 +115,18 @@
 
 			// echo "$time";
 			
-			$sql = "UPDATE participants SET isSet = 1 , time = $time WHERE email = '$login_session'";
+			$sql = "UPDATE enigma_participants SET isSet = 1 , time = $time WHERE email = '$login_session'";
 
 			$db->query($sql);
 
 		
 		}
 
-		$sql = "SELECT time FROM participants WHERE email = '$login_session'";
+		$sql = "SELECT time FROM enigma_participants WHERE email = '$login_session'";
 		$startTimeresult = $db->query($sql);
 		$startTime =  $startTimeresult->fetch_assoc()['time'];
 
-		$time_left = 30*60 - (time() - $startTime);
+		$time_left = 60*60 - (time() - $startTime);
 		// echo $time_left;
 
 		if($time_left <= 0){
@@ -144,12 +141,19 @@
 
 
 ?>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-	<title>Reflux | Quiz</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>FrontEnd Quiz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<style>
+	<link rel="stylesheet" href="reveal/css/reveal.min.css">
+	<link rel="stylesheet" href="reveal/css/theme/default.css" id="theme">
+	<link rel="stylesheet" href="talk.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<style type="text/css">
+		
 		
 	.greenAns{
 		color:#33aa77;
@@ -157,8 +161,8 @@
 
 		.footer{
 			border-top: solid 2px #cccccc;
-/*			background-color: #999999;
-*/			z-index: 10;
+			background-color: #bababa;
+			z-index: 10;
 			position: fixed;
 			bottom:0;
 			width:100%;
@@ -167,23 +171,44 @@
 
 		}
 
+		.space{
+			
+			height:13vh;
+			
+
+
+		}
+
 		.btn{
 			border-radius: 10px;
-			padding: 5px;
+			padding: 7px;
 			width:9vw;
 			border:none;
 			height:5vh;
 			background-color: #fafafa;
+			margin-left: 3px;
 
 		}
 
 		.btn2{
 			border-radius: 10px;
-			padding: 5px;
+			padding: 4px;
 			width:9vw;
 			border:none;
 			height:5vh;
 			background-color: #fafafa;
+			margin-left: 3px;
+
+		}
+
+		.btn3{
+			border-radius: 10px;
+			padding: 4px;
+			width:12vw;
+			border:none;
+			height:5vh;
+			background-color: #fafafa;
+			margin-left: 3px;
 
 		}
 
@@ -193,47 +218,46 @@
 
 		.question_ctrl{
 			position:fixed;
-			bottom: 10vh;
+			bottom: 12vh;
 			right:1vw;
+			border:solid 2px #039BE5;
+			border-radius: 4px;
+
 		}
 
 		body{
 			padding:0;
 			margin: 0;
 			border-width:0;
-			background-color: #efefef;
+			background-color: #ffffff;
+			overflow-x: hidden;	
 		}
 
-		.btn:active{
+		.btn :active{
 			border: none;
 		}
 
 		#back{
 			position: fixed;
-			right:12vw;
+			right:23vw;
 		}
 
 		#next{
 			position: fixed;
-			right:3vw;
+			right:13vw;
 		}
 
-		#submit{
-
+		#submitBtn{
+			position: fixed;
+			right:3vw;
+			bottom:3vh;
 		}
 
 		#start{
 
 		}
 
-		#background{
-			z-index: 0;
-			height:100%;
-			width:100%;
-			opacity:0.16;
-			position:fixed;
-
-		}
+	
 
 		#gnrl_ins{
 			position:fixed;
@@ -255,19 +279,17 @@
 		}
 
 		.question{
-			margin:30px;
+			margin-top:10px;
+			margin-left:10px;
+
 		}
 
-		.question input[type="radio"]{
-			margin:10px;
-			
-		}
 
 		.timer{
 			position: relative;
 			left:10vw;
 			font-size:20px;
-			color: #995522; 
+			color: #dd5522; 
 		}
 
 		.panelbtn_red{
@@ -291,13 +313,99 @@
 			border-radius: 10px;
 			font-size: 16px;
 		}
-	</style>
+
+		.answer{
+			border:none;
+			width:20vw;
+			border-bottom: solid 2px #cacaca;
+			height:5vh;
+			padding:4px;
+			margin-left: 8px;
+		}
+	
+	.blink {
+		-webkit-animation-duration: 1s;
+		-webkit-animation-name: blink;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-direction: alternate;
+		-webkit-animation-timing-function: ease-in-out;
+	}
+	@-webkit-keyframes blink {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+</style>
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal/lib/css/zenburn.css">
 </head>
 <body>
-	
+	<div class="reveal">
+		<div class="slides">
 
-	<div class="panel" id="panel" hidden align="center">
+			<section>
+				<h1 style="text-transform:none;">
+					ENIGMA &lt;&gt;
+				</h1>
+				<div>
+					<br>
+				</div>
+
+			</section>
+			<section>
+					<div class="instruction" id="instruction">
+				<center>
+				<h1 class="heading"> General Instruction </span></u></h1></center>
+				<ul>
+					<li><font size="5">Fill your answer in the space provided corresponding to each question.</font></li>
+					<li><font size="5"><button class="btn" disabled="">Panel</button> will show all questions and their status whether they are saved or not.
+					<br> <button class="panelbtn_red" disabled>1</button> shows a not answered question and,<br>
+					<button class="panelbtn_green" disabled >2</button> shows a saved question.</font></li>
+					<li><font size="5"><button class="btn" disabled="">Submit</button> will become active only after 10 min of quiz start. This <b>will directly submit all your saved answer</b>.<br></font></li>
+					<li><font size="5"><button class="btn2" disabled>Save And Next</button> use this to Save the question and continue.<b>Only the saved questions will be evaluted.</b></font></li>
+					<li><font size="5"><b>Do not refresh the page or close the browser.</b> In case your browser is accidently closed, your saved answer will be preserved but will not show up on the interface.</font></li>
+					
+					<li><font size="5">Press the right arrow key on your keyboard proceed.</font></li>
+
+				</ul>
+
+
+				
+	</div>
+			</section>
+
+			<?php 
+			for($i=$questions[0];$i<=$questions[39];$i++){
+				// read the question no enigma  participant
+
+				// 
+
+
+				echo "<section> <section> <h2>Question #$i</h2> <div> <br> <img src='New/Main/$i.PNG' alt='hello'> </div><div><input type='radio' name='answer$i' value='1'  >option1 <input type='radio' name='answer$i' value='2' >option2<br> <input type='radio' name='answer$i' value='3' >option3 <input type='radio' name='answer$i' value='4' >option4<br><script type='text/javascript'> var page_count=$i;document.write(page_count);</script><!DOCTYPE html> <html> <head> <title></title> </head> <body> <div class='navigate-left enabled'>left</div> <div class='navigate-left enabled'>right</div></body> </html> </div><div class='question_ctrl'><button name='saveques' class='btn2' id='saveques' onclick='submitQues(page_count)'>Save And Next</button></div></section> <section> <div><div class='panel' id='panel' align='center'> <center><h2 class='heading'> Question Panel </span></u></h2></center><br/><br/> <div id='question_row1'> <button class='panelbtn_red' id='bpanel1' value='1' onclick='gotoId(1);'>1</button> <button class='panelbtn_red' id='bpanel2' value='2' onclick='gotoId(2);'>2</button> <button class='panelbtn_red' id='bpanel3' value='3' onclick='gotoId(3);'>3</button> <button class='panelbtn_red' id='bpanel4' value='4' onclick='gotoId(4);'>4</button> <button class='panelbtn_red' id='bpanel5' value='5' onclick='gotoId(5);'>5</button> <button class='panelbtn_red' id='bpanel6' value='6' onclick='gotoId(6);'>6</button> <button class='panelbtn_red' id='bpanel7' value='7' onclick='gotoId(7);'>7</button> <button class='panelbtn_red' id='bpanel8' value='8' onclick='gotoId(8);'>8</button> <button class='panelbtn_red' id='bpanel9' value='9' onclick='gotoId(9);'>9</button> <button class='panelbtn_red' id='bpanel10' value='10' onclick='gotoId(10);'>10</button> </div> <div id='question_row2'> <button class='panelbtn_red' id='bpanel11' value='11' onclick='gotoId(11);'>11</button> <button class='panelbtn_red' id='bpanel12' value='12' onclick='gotoId(12);'>12</button> <button class='panelbtn_red' id='bpanel13' value='13' onclick='gotoId(13);'>13</button> <button class='panelbtn_red' id='bpanel14' value='14' onclick='gotoId(14);'>14</button> <button class='panelbtn_red' id='bpanel15' value='15' onclick='gotoId(15);'>15</button> <button class='panelbtn_red' id='bpanel16' value='16' onclick='gotoId(16);'>16</button> <button class='panelbtn_red' id='bpanel17' value='17' onclick='gotoId(17);'>17</button> <button class='panelbtn_red' id='bpanel18' value='18' onclick='gotoId(18);'>18</button> <button class='panelbtn_red' id='bpanel19' value='19' onclick='gotoId(19);'>19</button> <button class='panelbtn_red' id='bpanel20' value='20' onclick='gotoId(20);'>20</button> </div> <div id='question_row3'> <button class='panelbtn_red' id='bpanel21' value='21' onclick='gotoId(21);'>21</button> <button class='panelbtn_red' id='bpanel22' value='22' onclick='gotoId(22);'>22</button> <button class='panelbtn_red' id='bpanel23' value='23' onclick='gotoId(23);'>23</button> <button class='panelbtn_red' id='bpanel24' value='24' onclick='gotoId(24);'>24</button> <button class='panelbtn_red' id='bpanel25' value='25' onclick='gotoId(25);'>25</button> <button class='panelbtn_red' id='bpanel26' value='26' onclick='gotoId(26);'>26</button> <button class='panelbtn_red' id='bpanel27' value='27' onclick='gotoId(27);'>27</button> <button class='panelbtn_red' id='bpanel28' value='28' onclick='gotoId(28);'>28</button> <button class='panelbtn_red' id='bpanel29' value='29' onclick='gotoId(29);'>29</button> <button class='panelbtn_red' id='bpanel30' value='30' onclick='gotoId(30);'>30</button> </div> <div id='question_row4'> <button class='panelbtn_red' id='bpanel31' value='31' onclick='gotoId(31);'>31</button> <button class='panelbtn_red' id='bpanel32' value='32' onclick='gotoId(32);'>32</button> <button class='panelbtn_red' id='bpanel33' value='33' onclick='gotoId(33);'>33</button> <button class='panelbtn_red' id='bpanel34' value='34' onclick='gotoId(34);'>34</button> <button class='panelbtn_red' id='bpanel35' value='35' onclick='gotoId(35);'>35</button> <button class='panelbtn_red' id='bpanel36' value='36' onclick='gotoId(36);'>36</button> <button class='panelbtn_red' id='bpanel37' value='37' onclick='gotoId(37);'>37</button> <button class='panelbtn_red' id='bpanel38' value='38' onclick='gotoId(38);'>38</button> <button class='panelbtn_red' id='bpanel39' value='39' onclick='gotoId(39);'>39</button> <button class='panelbtn_red' id='bpanel40' value='40' onclick='gotoId(40);'>40</button> </div> <div id='question_row5'> <button class='panelbtn_red' id='bpanel41' value='41' onclick='gotoId(41);'>41</button> <button class='panelbtn_red' id='bpanel42' value='42' onclick='gotoId(42);'>42</button> <button class='panelbtn_red' id='bpanel43' value='43' onclick='gotoId(43);'>43</button> <button class='panelbtn_red' id='bpanel44' value='44' onclick='gotoId(44);'>44</button> <button class='panelbtn_red' id='bpanel45' value='45' onclick='gotoId(45);'>45</button> </div> </div></div> </section> </section>"; } ?>
+
+		<section>
+			<?php 
+			for($i=$questions[40];$i<=$questions[44];$i++){
+				// read the question no enigma  participant
+
+				// 
+
+
+				echo "<section> <section> <h2>Question #$i</h2> <div> <br> <img src='New/GK/$i.PNG' alt='hello'> </div><div><input type='radio' name='answer$i' value='1'  >option1 <input type='radio' name='answer$i' value='2' >option2<br> <input type='radio' name='answer$i' value='3' >option3 <input type='radio' name='answer$i' value='4' >option4<br><script type='text/javascript'> var page_count=$i;document.write(page_count);</script><!DOCTYPE html> <html> <head> <title></title> </head> <body> <div class='navigate-left enabled'>left</div> <div class='navigate-left enabled'>right</div></body> </html> </div><div class='question_ctrl'><button name='saveques' class='btn2' id='saveques' onclick='submitQues(page_count)'>Save And Next</button></div></section> <section> <div><div class='panel' id='panel' align='center'> <center><h2 class='heading'> Question Panel </span></u></h2></center><br/><br/> <div id='question_row1'> <button class='panelbtn_red' id='bpanel1' value='1' onclick='gotoId(1);'>1</button> <button class='panelbtn_red' id='bpanel2' value='2' onclick='gotoId(2);'>2</button> <button class='panelbtn_red' id='bpanel3' value='3' onclick='gotoId(3);'>3</button> <button class='panelbtn_red' id='bpanel4' value='4' onclick='gotoId(4);'>4</button> <button class='panelbtn_red' id='bpanel5' value='5' onclick='gotoId(5);'>5</button> <button class='panelbtn_red' id='bpanel6' value='6' onclick='gotoId(6);'>6</button> <button class='panelbtn_red' id='bpanel7' value='7' onclick='gotoId(7);'>7</button> <button class='panelbtn_red' id='bpanel8' value='8' onclick='gotoId(8);'>8</button> <button class='panelbtn_red' id='bpanel9' value='9' onclick='gotoId(9);'>9</button> <button class='panelbtn_red' id='bpanel10' value='10' onclick='gotoId(10);'>10</button> </div> <div id='question_row2'> <button class='panelbtn_red' id='bpanel11' value='11' onclick='gotoId(11);'>11</button> <button class='panelbtn_red' id='bpanel12' value='12' onclick='gotoId(12);'>12</button> <button class='panelbtn_red' id='bpanel13' value='13' onclick='gotoId(13);'>13</button> <button class='panelbtn_red' id='bpanel14' value='14' onclick='gotoId(14);'>14</button> <button class='panelbtn_red' id='bpanel15' value='15' onclick='gotoId(15);'>15</button> <button class='panelbtn_red' id='bpanel16' value='16' onclick='gotoId(16);'>16</button> <button class='panelbtn_red' id='bpanel17' value='17' onclick='gotoId(17);'>17</button> <button class='panelbtn_red' id='bpanel18' value='18' onclick='gotoId(18);'>18</button> <button class='panelbtn_red' id='bpanel19' value='19' onclick='gotoId(19);'>19</button> <button class='panelbtn_red' id='bpanel20' value='20' onclick='gotoId(20);'>20</button> </div> <div id='question_row3'> <button class='panelbtn_red' id='bpanel21' value='21' onclick='gotoId(21);'>21</button> <button class='panelbtn_red' id='bpanel22' value='22' onclick='gotoId(22);'>22</button> <button class='panelbtn_red' id='bpanel23' value='23' onclick='gotoId(23);'>23</button> <button class='panelbtn_red' id='bpanel24' value='24' onclick='gotoId(24);'>24</button> <button class='panelbtn_red' id='bpanel25' value='25' onclick='gotoId(25);'>25</button> <button class='panelbtn_red' id='bpanel26' value='26' onclick='gotoId(26);'>26</button> <button class='panelbtn_red' id='bpanel27' value='27' onclick='gotoId(27);'>27</button> <button class='panelbtn_red' id='bpanel28' value='28' onclick='gotoId(28);'>28</button> <button class='panelbtn_red' id='bpanel29' value='29' onclick='gotoId(29);'>29</button> <button class='panelbtn_red' id='bpanel30' value='30' onclick='gotoId(30);'>30</button> </div> <div id='question_row4'> <button class='panelbtn_red' id='bpanel31' value='31' onclick='gotoId(31);'>31</button> <button class='panelbtn_red' id='bpanel32' value='32' onclick='gotoId(32);'>32</button> <button class='panelbtn_red' id='bpanel33' value='33' onclick='gotoId(33);'>33</button> <button class='panelbtn_red' id='bpanel34' value='34' onclick='gotoId(34);'>34</button> <button class='panelbtn_red' id='bpanel35' value='35' onclick='gotoId(35);'>35</button> <button class='panelbtn_red' id='bpanel36' value='36' onclick='gotoId(36);'>36</button> <button class='panelbtn_red' id='bpanel37' value='37' onclick='gotoId(37);'>37</button> <button class='panelbtn_red' id='bpanel38' value='38' onclick='gotoId(38);'>38</button> <button class='panelbtn_red' id='bpanel39' value='39' onclick='gotoId(39);'>39</button> <button class='panelbtn_red' id='bpanel40' value='40' onclick='gotoId(40);'>40</button> </div> <div id='question_row5'> <button class='panelbtn_red' id='bpanel41' value='41' onclick='gotoId(41);'>41</button> <button class='panelbtn_red' id='bpanel42' value='42' onclick='gotoId(42);'>42</button> <button class='panelbtn_red' id='bpanel43' value='43' onclick='gotoId(43);'>43</button> <button class='panelbtn_red' id='bpanel44' value='44' onclick='gotoId(44);'>44</button> <button class='panelbtn_red' id='bpanel45' value='45' onclick='gotoId(45);'>45</button> </div> </div></div> </section> </section>"; } ?>
+
+			<h2>THE END</h2>
+			<div class="panel" id="panel" align="center">
 				<center><h2 class="heading"> Question Panel </span></u></h2></center><br/><br/>
+				<form action="thanks.php" method="post">
+					<script type='text/javascript'> var page_count=$i;</script>
+				<button	type="submit" class="btn" id="submitBtn" >Submit</button>
+				</form>
+				</div>
+
 				<div id="question_row1">
 					<button class="panelbtn_red" id="bpanel1" value="1" onclick="gotoId(1);">1</button>
 					<button class="panelbtn_red" id="bpanel2" value="2" onclick="gotoId(2);">2</button>
@@ -358,81 +466,44 @@
 
 
 	</div>
-
-	<div class="instruction" id="instruction" hidden>
-				<center>
-				<h2 class="heading"> General Instruction </span></u></h2></center>
-				<ul>
-					<li>Choose one option corresponding to each question by selecting the box.</li>
-					<li><button class="btn" disabled="">Panel</button> will show all questions and their status whether they are saved or not.
-					<br> <button class="panelbtn_red" disabled>1</button> shows a not answered question and,<br>
-					<button class="panelbtn_green" disabled >2</button> shows a saved question.</li>
-					<li><button class="btn" disabled="">Submit</button> will become active only after 10 min of quiz start. This <b>will directly submit all your saved answer</b>.</li>
-					<li><button class="btn2" disabled>Save And Next</button> use this to Save the question and continue.<b>Questions saved will only be evaluted.</b></li>
-					<li><b>Donot refresh the page or close the browser.</b> In case your browser is accidently closed, your saved answer will be preserved but will not show up on the interface.</li>
-				</ul>
-
-				
-				
+		</section>
 	</div>
 
 
-<?php 
+	<script src="reveal/lib/js/head.min.js"></script>
+	<script src="reveal/js/reveal.min.js"></script>
 
-for($i=0 ;$i<45 ;$i++){
+	<script>
 
-	$j = $i +1;
-	echo <<<SOM
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
 
-	<div id='page$j' hidden>
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-		<center><h2 class="heading">Question $j</span></u></h2></center>
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'reveal/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					// { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					]
+				});
 
-		<div class="question"  >
-			<h2>$questions[$i]</h2>
-			<div id='question$j'>
-			  <input type="radio" name="answer$j" value="1"  >$option1[$i]<br>
-			  <input type="radio" name="answer$j" value="2" >$option2[$i]<br>
-			  <input type="radio" name="answer$j" value="3" >$option3[$i]<br>
-			  <input type="radio" name="answer$j" value="4" >$option4[$i]<br>
-		  </div>
+			</script>
+
 		</div>
-	</div>
-
-SOM;
-}
-
-?>
+		<script type="text/javascript">	
 	
-	
-	<div class="question_ctrl">
-			<button name="saveques" class="btn2" id="saveques" onclick="submitQues(page_count)">Save And Next</button>
-	</div>
-
-	<div style ="position: fixed; bottom:10vh;left:43vw;">
-		<span style="color:#aa2242" id="msgover" hidden>Less than 5 mins are remaining. Hurry Up!</span>
-	</div>
-	<div style="position:fixed;bottom:10vh;left:2vw;">
-<form action="thankyou.php" method="post">
-					<button	type="submit" class="btn" id="submitBtn" disabled >Submit</button>
-				</form>
-				</div>
-
-	<div class="footer">
-				
-				<button	class="btn" id="instructbtn" onclick="instruct();">Instructions</button>
-				<button	class="btn" id="panelbtn" onclick="panel();">Panel</button>
-				<button class="btn" id="gobacktoques" onclick="gobacktoques();">Back To Question</button>
-			    <span class="timer">Time Left : <span id="time"></span></span>
-				<button class="btn" id="back" onclick="back();">Back</button>
-				<button class="btn" id="next" onclick="next();">Next</button>
-				<span></span>
-	</div>
-
-
-	<script type="text/javascript">
-		
-	var page_count = 1;
 
 
 	window.onload = onloadfunction();
@@ -444,7 +515,7 @@ SOM;
 		var time  = <?php echo $time_left; ?>;
 		
 		// page_count = 1;
-		total = 45;
+		total = 30;
 		document.getElementById("page"+page_count).hidden = false;
 		document.getElementById("panel").hidden = true;
 		document.getElementById("instruction").hidden = true;
@@ -453,15 +524,7 @@ SOM;
 		document.getElementById("back").disabled = true;
 
 
-		
-		// var options = [][];
 
-		// for(var i=0;i<45;i++){
-		// 	for(var j=0;j<4;j++){
-
-		// 		options[i][j] = false;
-		// 	}
-		// }
 
 	}
 
@@ -516,7 +579,8 @@ SOM;
 		function submitQues(value){
 			
 			var quesnum = page_count;
-			$selectq = 'input:radio[name=answer'+ quesnum +']:checked'
+			alert(quesnum);
+			$selectq = 'input:text[name=answer'+ quesnum +']'
 			var response = $($selectq).val();
 
 			
@@ -556,12 +620,12 @@ SOM;
 
 		    function timer(){
 		    	if(diff <= 0){
-		    		window.location = "http://quiz.reflux.in/thankyou.php";
+		    		window.location = "http://quiz.reflux.in/thanks.php";
 		    	}
 		    	if(diff < 300){
 		    		document.getElementById('msgover').hidden = false;
 		    	}
-		    	if(diff < 1200){
+		    	if(diff < 3000){
 		    		document.getElementById('submitBtn').disabled = false;
 		    	}
 		    	
@@ -579,6 +643,7 @@ SOM;
 
 
 window.onload = function () {
+	
     startTimer();
 
 };
@@ -665,8 +730,6 @@ function gobacktoques(){
 	document.getElementById("panel").hidden = true;
 	document.getElementById("instruction").hidden = true;
 
-
-	
 	if(page_count == 1)
 	document.getElementById("back").disabled = true;
 	
@@ -679,7 +742,10 @@ function gobacktoques(){
 
 }
 
+	
+
 
 </script>
 </body>
 </html>
+	
