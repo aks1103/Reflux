@@ -320,6 +320,8 @@ for($i=1; $i<=40; $i++) {
 
 
 <script type="text/javascript">
+	var next;
+	var back;
 	var myleft = function(){back();};
 	var myright = function(){next()};
 
@@ -523,7 +525,7 @@ for($i=1; $i<=40; $i++) {
 
 	});
 
-		function back(){
+		back = function(){
 			if(page_count>1){
 				document.getElementById("page"+page_count).hidden = true;	
 				page_count--;
@@ -544,7 +546,7 @@ for($i=1; $i<=40; $i++) {
 
 		}
 
-		function next(){
+		next = function(){
 			if(page_count<total){
 				document.getElementById("page"+page_count).hidden = true;	
 				page_count++;
@@ -603,7 +605,8 @@ for($i=1; $i<=40; $i++) {
     	
 
 
-		    var diff = <?php echo $time_left ?>;
+		    // var diff = <?php echo $time_left ?>;
+		    var diff = 100;
 
 		    function timer(){
 		    	if(diff <= 0){
