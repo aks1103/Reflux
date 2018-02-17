@@ -19,7 +19,7 @@
           exit();
       }
       if($count == 1 && $active == "1"){ // only one such user exists & confirmed
-          if(time() < 1517097600){
+          if(time()){
  echo <<<DET
  <!doctype html>
  <title>Reflux | Quiz</title>
