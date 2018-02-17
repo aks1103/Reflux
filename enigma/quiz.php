@@ -320,8 +320,8 @@ for($i=1; $i<=40; $i++) {
 
 
 <script type="text/javascript">
-	var myleft = function(){alert('dawd');};
-	var myright = function(){alert('dawdwd')};
+	var myleft = function(){back();};
+	var myright = function(){next()};
 
 </script>
 <!-- For syntax highlighting -->
