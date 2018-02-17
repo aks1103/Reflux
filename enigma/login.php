@@ -86,17 +86,20 @@ exit();
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url(login_back.jpg);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;">
 <div class="login-box">
-	<br>
+	<br><br>
   <div class="login-logo">
-    <center><a href="http://reflux.in"><img src="ref2018.png" style="width: 18vw;" /></a></center>
+    <center><a href="http://reflux.in"><img src="ref2018.png" style="width: 28vw;" /></a></center>
   </div>
   <!-- /.login-logo --><center>
-  <div class="login-box-body" style="width: 36vw;">
-  	<br>
-    <p class="login-box-msg">Sign in to start your session</p>
-<br>
+  <div class="login-box-body" style="width: 30vw;">
+  	<br><br>
+    <p class="login-box-msg" style="color: white">Sign in to start your session</p>
+<br><br>
     <form action="" method="post">
       <div class="form-group has-feedback">
         <input name="email"  type="email" class="form-control" placeholder="Email">
@@ -110,7 +113,7 @@ exit();
         <!-- <div class="col-xs-8"> -->
         <div>
           <div class="checkbox icheck">
-            <label>
+            <label style="color: white">
               <input type="checkbox"> Remember Me
             </label>
           </div>
@@ -118,7 +121,7 @@ exit();
         <!-- /.col -->
         <!-- <div class="col-xs-4"> -->
        	<div>
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" style="width: 30vw;">Sign In</button>
         </div>
         <!-- /.col -->
       </div>
