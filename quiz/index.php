@@ -127,6 +127,69 @@ for($i=1; $i<=40; $i++) {
 			overflow-x: hidden;	
 		}
 
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
 		.btn :active{
 			border: none;
 		}
@@ -146,6 +209,23 @@ for($i=1; $i<=40; $i++) {
 			right:3vw;
 			bottom:3vh;
 		}
+		   #montainer {
+        width: 800px;
+        height: 150px;
+        overflow: scroll;
+        background-color: #ccc;         
+    }
+
+    #montainer .image-montainer {
+        
+        vertical-align: middle;
+        
+    }
+
+    #montainer .image-montainer img {
+        
+               
+    }
 
 		#start{
 
@@ -245,23 +325,24 @@ for($i=1; $i<=40; $i++) {
 	<div class="reveal">
 		<div class="slides">
 
-			<section>
-				<h1 style="text-transform:none;">
-					ENIGMA &lt;&gt;
+			<section data-background='mk.jpg' backgroundTransition='slide'>
+				<h1 style="font-family:verdana;">
+
+					ENIGMA 
 				</h1>
 				<div>
 					<br>
 				</div>
 
 			</section>
-			<section>
+			<section data-background='mk.jpg' backgroundTransition='slide'>
 					<div class="instruction" id="instruction">
 				<center>
-				<h1 class="heading"> General Instruction </span></u></h1></center>
+				<h2 class="heading"> General Instruction </span></u></h2></center>
 				<ul>
 					<li><font size="5">Fill your answer in the space provided corresponding to each question.</font></li>
 					<li><font size="5"><button class="btn" disabled="">Panel</button> will show all questions and their status whether they are saved or not.
-					<br> <button class="panelbtn_red" disabled>1</button> shows a not answered question and,<br>
+					<br> <button class="panelbtn_red" disabled>1</button> shows a unanswered question and,<br>
 					<button class="panelbtn_green" disabled >2</button> shows a saved question.</font></li>
 					<li><font size="5"><button class="btn" disabled="">Submit</button> will become active only after 10 min of quiz start. This <b>will directly submit all your saved answer</b>.<br></font></li>
 					<li><font size="5"><button class="btn2" disabled>Save And Next</button> use this to Save the question and continue.<b>Only the saved questions will be evaluted.</b></font></li>
@@ -283,7 +364,7 @@ for($i=1; $i<=40; $i++) {
 				// 
 
 					$k=$questions[$i];
-				echo "<section data-background='#421' backgroundTransition='slide'> <section> <h2>Question #$i</h2> <div> <br> <img src='ques/".md5("refE_".$k)."' alt='hello'> </div><div><input type='radio' name='answer$i' value='1'  >option1 <input type='radio' name='answer$i' value='2' >option2<br> <input type='radio' name='answer$i' value='3' >option3 <input type='radio' name='answer$i' value='4' >option4<br><script type='text/javascript'> var page_count=$k;document.write(page_count);</script><!DOCTYPE html> <html> <head> <title></title> </head> <body> <div class='navigate-left enabled'>left</div> <div class='navigate-left enabled'>right</div></body> </html> </div><div class='question_ctrl'><button name='saveques' class='btn2' id='saveques' onclick='submitQues(page_count)'>Save And Next</button></div></section> <section> <div><div class='panel' id='panel' align='center'> <center><h2 class='heading'> Question Panel </span></u></h2></center><br/><br/> <div id='question_row1'> <button class='panelbtn_red' id='bpanel1' value='1' onclick='gotoId(1);'>1</button> <button class='panelbtn_red' id='bpanel2' value='2' onclick='gotoId(2);'>2</button> <button class='panelbtn_red' id='bpanel3' value='3' onclick='gotoId(3);'>3</button> <button class='panelbtn_red' id='bpanel4' value='4' onclick='gotoId(4);'>4</button> <button class='panelbtn_red' id='bpanel5' value='5' onclick='gotoId(5);'>5</button> <button class='panelbtn_red' id='bpanel6' value='6' onclick='gotoId(6);'>6</button> <button class='panelbtn_red' id='bpanel7' value='7' onclick='gotoId(7);'>7</button> <button class='panelbtn_red' id='bpanel8' value='8' onclick='gotoId(8);'>8</button> <button class='panelbtn_red' id='bpanel9' value='9' onclick='gotoId(9);'>9</button> <button class='panelbtn_red' id='bpanel10' value='10' onclick='gotoId(10);'>10</button> </div> <div id='question_row2'> <button class='panelbtn_red' id='bpanel11' value='11' onclick='gotoId(11);'>11</button> <button class='panelbtn_red' id='bpanel12' value='12' onclick='gotoId(12);'>12</button> <button class='panelbtn_red' id='bpanel13' value='13' onclick='gotoId(13);'>13</button> <button class='panelbtn_red' id='bpanel14' value='14' onclick='gotoId(14);'>14</button> <button class='panelbtn_red' id='bpanel15' value='15' onclick='gotoId(15);'>15</button> <button class='panelbtn_red' id='bpanel16' value='16' onclick='gotoId(16);'>16</button> <button class='panelbtn_red' id='bpanel17' value='17' onclick='gotoId(17);'>17</button> <button class='panelbtn_red' id='bpanel18' value='18' onclick='gotoId(18);'>18</button> <button class='panelbtn_red' id='bpanel19' value='19' onclick='gotoId(19);'>19</button> <button class='panelbtn_red' id='bpanel20' value='20' onclick='gotoId(20);'>20</button> </div> <div id='question_row3'> <button class='panelbtn_red' id='bpanel21' value='21' onclick='gotoId(21);'>21</button> <button class='panelbtn_red' id='bpanel22' value='22' onclick='gotoId(22);'>22</button> <button class='panelbtn_red' id='bpanel23' value='23' onclick='gotoId(23);'>23</button> <button class='panelbtn_red' id='bpanel24' value='24' onclick='gotoId(24);'>24</button> <button class='panelbtn_red' id='bpanel25' value='25' onclick='gotoId(25);'>25</button> <button class='panelbtn_red' id='bpanel26' value='26' onclick='gotoId(26);'>26</button> <button class='panelbtn_red' id='bpanel27' value='27' onclick='gotoId(27);'>27</button> <button class='panelbtn_red' id='bpanel28' value='28' onclick='gotoId(28);'>28</button> <button class='panelbtn_red' id='bpanel29' value='29' onclick='gotoId(29);'>29</button> <button class='panelbtn_red' id='bpanel30' value='30' onclick='gotoId(30);'>30</button> </div> <div id='question_row4'> <button class='panelbtn_red' id='bpanel31' value='31' onclick='gotoId(31);'>31</button> <button class='panelbtn_red' id='bpanel32' value='32' onclick='gotoId(32);'>32</button> <button class='panelbtn_red' id='bpanel33' value='33' onclick='gotoId(33);'>33</button> <button class='panelbtn_red' id='bpanel34' value='34' onclick='gotoId(34);'>34</button> <button class='panelbtn_red' id='bpanel35' value='35' onclick='gotoId(35);'>35</button> <button class='panelbtn_red' id='bpanel36' value='36' onclick='gotoId(36);'>36</button> <button class='panelbtn_red' id='bpanel37' value='37' onclick='gotoId(37);'>37</button> <button class='panelbtn_red' id='bpanel38' value='38' onclick='gotoId(38);'>38</button> <button class='panelbtn_red' id='bpanel39' value='39' onclick='gotoId(39);'>39</button> <button class='panelbtn_red' id='bpanel40' value='40' onclick='gotoId(40);'>40</button> </div> <div id='question_row5'> <button class='panelbtn_red' id='bpanel41' value='41' onclick='gotoId(41);'>41</button> <button class='panelbtn_red' id='bpanel42' value='42' onclick='gotoId(42);'>42</button> <button class='panelbtn_red' id='bpanel43' value='43' onclick='gotoId(43);'>43</button> <button class='panelbtn_red' id='bpanel44' value='44' onclick='gotoId(44);'>44</button> <button class='panelbtn_red' id='bpanel45' value='45' onclick='gotoId(45);'>45</button> </div> </div></div> </section> </section>"; } ?>
+				echo "<section data-background='mk.jpg' backgroundTransition='slide'> <section> <h2>Question #$i</h2> <div> <br> <div id='montainer'> <div class='image-montainer'> <img src='ques/".md5("refE_".$k)."' alt='hello' /> </div> </div>​ </div><div><label class='container'>One <input type='radio'> <span class='checkmark'></span> </label> <label class='container'>Two <input type='radio' > <span class='checkmark'></span> </label><label class='container'>Three <input type='radio' > <span class='checkmark'></span> </label><label class='container'>Four <input type='radio'> <span class='checkmark'></span> </label><script type='text/javascript'> var page_count=$k;document.write(page_count);</script><!DOCTYPE html> <html> <head> <title></title> </head> <body> <div class='navigate-left enabled'>left</div> <div class='navigate-left enabled'>right</div></body> </html> </div><div class='question_ctrl'><button name='saveques' class='btn2' id='saveques' onclick='submitQues(page_count)'>Save And Next</button></div></section> <section> <div><div class='panel' id='panel' align='center'> <center><h2 class='heading'> Question Panel </span></u></h2></center><br/><br/> <div id='question_row1'> <button class='panelbtn_red' id='bpanel1' value='1' onclick='gotoId(1);'>1</button> <button class='panelbtn_red' id='bpanel2' value='2' onclick='gotoId(2);'>2</button> <button class='panelbtn_red' id='bpanel3' value='3' onclick='gotoId(3);'>3</button> <button class='panelbtn_red' id='bpanel4' value='4' onclick='gotoId(4);'>4</button> <button class='panelbtn_red' id='bpanel5' value='5' onclick='gotoId(5);'>5</button> <button class='panelbtn_red' id='bpanel6' value='6' onclick='gotoId(6);'>6</button> <button class='panelbtn_red' id='bpanel7' value='7' onclick='gotoId(7);'>7</button> <button class='panelbtn_red' id='bpanel8' value='8' onclick='gotoId(8);'>8</button> <button class='panelbtn_red' id='bpanel9' value='9' onclick='gotoId(9);'>9</button> <button class='panelbtn_red' id='bpanel10' value='10' onclick='gotoId(10);'>10</button> </div> <div id='question_row2'> <button class='panelbtn_red' id='bpanel11' value='11' onclick='gotoId(11);'>11</button> <button class='panelbtn_red' id='bpanel12' value='12' onclick='gotoId(12);'>12</button> <button class='panelbtn_red' id='bpanel13' value='13' onclick='gotoId(13);'>13</button> <button class='panelbtn_red' id='bpanel14' value='14' onclick='gotoId(14);'>14</button> <button class='panelbtn_red' id='bpanel15' value='15' onclick='gotoId(15);'>15</button> <button class='panelbtn_red' id='bpanel16' value='16' onclick='gotoId(16);'>16</button> <button class='panelbtn_red' id='bpanel17' value='17' onclick='gotoId(17);'>17</button> <button class='panelbtn_red' id='bpanel18' value='18' onclick='gotoId(18);'>18</button> <button class='panelbtn_red' id='bpanel19' value='19' onclick='gotoId(19);'>19</button> <button class='panelbtn_red' id='bpanel20' value='20' onclick='gotoId(20);'>20</button> </div> <div id='question_row3'> <button class='panelbtn_red' id='bpanel21' value='21' onclick='gotoId(21);'>21</button> <button class='panelbtn_red' id='bpanel22' value='22' onclick='gotoId(22);'>22</button> <button class='panelbtn_red' id='bpanel23' value='23' onclick='gotoId(23);'>23</button> <button class='panelbtn_red' id='bpanel24' value='24' onclick='gotoId(24);'>24</button> <button class='panelbtn_red' id='bpanel25' value='25' onclick='gotoId(25);'>25</button> <button class='panelbtn_red' id='bpanel26' value='26' onclick='gotoId(26);'>26</button> <button class='panelbtn_red' id='bpanel27' value='27' onclick='gotoId(27);'>27</button> <button class='panelbtn_red' id='bpanel28' value='28' onclick='gotoId(28);'>28</button> <button class='panelbtn_red' id='bpanel29' value='29' onclick='gotoId(29);'>29</button> <button class='panelbtn_red' id='bpanel30' value='30' onclick='gotoId(30);'>30</button> </div> <div id='question_row4'> <button class='panelbtn_red' id='bpanel31' value='31' onclick='gotoId(31);'>31</button> <button class='panelbtn_red' id='bpanel32' value='32' onclick='gotoId(32);'>32</button> <button class='panelbtn_red' id='bpanel33' value='33' onclick='gotoId(33);'>33</button> <button class='panelbtn_red' id='bpanel34' value='34' onclick='gotoId(34);'>34</button> <button class='panelbtn_red' id='bpanel35' value='35' onclick='gotoId(35);'>35</button> <button class='panelbtn_red' id='bpanel36' value='36' onclick='gotoId(36);'>36</button> <button class='panelbtn_red' id='bpanel37' value='37' onclick='gotoId(37);'>37</button> <button class='panelbtn_red' id='bpanel38' value='38' onclick='gotoId(38);'>38</button> <button class='panelbtn_red' id='bpanel39' value='39' onclick='gotoId(39);'>39</button> <button class='panelbtn_red' id='bpanel40' value='40' onclick='gotoId(40);'>40</button> </div> <div id='question_row5'> <button class='panelbtn_red' id='bpanel41' value='41' onclick='gotoId(41);'>41</button> <button class='panelbtn_red' id='bpanel42' value='42' onclick='gotoId(42);'>42</button> <button class='panelbtn_red' id='bpanel43' value='43' onclick='gotoId(43);'>43</button> <button class='panelbtn_red' id='bpanel44' value='44' onclick='gotoId(44);'>44</button> <button class='panelbtn_red' id='bpanel45' value='45' onclick='gotoId(45);'>45</button> </div> </div></div> </section> </section>"; } ?>
 
 		<section>
 			<?php 

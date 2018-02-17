@@ -35,7 +35,7 @@
 <article>
      <h1>Welcome $name</h1>
      <div>
-         <p>Enigma an open to all quiz would be conducted on 11th, Feb'18.It will be organised in two rounds with cash prizes and goodies to win.<br><a href="mailto:reflux@iitg.ernet.in">Contact Us. </a><br>Stay Tuned for other updates of Reflux!</p>
+         <p>Enigma an open to all quiz would be conducted on 18th, Feb'18.It will be organised in two rounds with cash prizes and goodies to win.<br><a href="mailto:reflux@iitg.ernet.in">Contact Us. </a><br>Stay Tuned for other updates of Reflux!</p>
      </div>
  </article>
 
