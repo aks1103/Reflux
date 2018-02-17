@@ -19,7 +19,7 @@
           exit();
       }
       if($count == 1 && $active == "1"){ // only one such user exists & confirmed
-          if(time()>0){
+          if(time()>0&&$email!="amantiwari123786@gmail.com"){
  echo <<<DET
  <!doctype html>
  <title>Reflux | Quiz</title>
@@ -155,4 +155,4 @@ exit();
 </script>
 </body>
 </html>
-		s
+		
