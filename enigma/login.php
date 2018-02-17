@@ -65,7 +65,7 @@ exit();
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Reflux | Quiz</title>
+  <title>Reflux | Enigma</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -88,13 +88,15 @@ exit();
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
+	<br>
   <div class="login-logo">
-    <a href="http://reflux.in"><b>Reflux</b></a>
+    <center><a href="http://reflux.in"><img src="ref2018.png" style="width: 18vw;" /></a></center>
   </div>
-  <!-- /.login-logo -->
-  <div class="login-box-body">
+  <!-- /.login-logo --><center>
+  <div class="login-box-body" style="width: 36vw;">
+  	<br>
     <p class="login-box-msg">Sign in to start your session</p>
-
+<br>
     <form action="" method="post">
       <div class="form-group has-feedback">
         <input name="email"  type="email" class="form-control" placeholder="Email">
@@ -105,7 +107,8 @@ exit();
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
-        <div class="col-xs-8">
+        <!-- <div class="col-xs-8"> -->
+        <div>
           <div class="checkbox icheck">
             <label>
               <input type="checkbox"> Remember Me
@@ -113,7 +116,8 @@ exit();
           </div>
         </div>
         <!-- /.col -->
-        <div class="col-xs-4">
+        <!-- <div class="col-xs-4"> -->
+       	<div>
           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
         <!-- /.col -->
@@ -124,7 +128,7 @@ exit();
     
     <a href="index.php" class="text-center">Not Registered?</a> <!-- redirects to register page -->
 
-  </div>
+  </div></center>
   <!-- /.login-box-body -->
 </div>
 
