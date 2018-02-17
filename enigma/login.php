@@ -47,7 +47,7 @@ exit();
 
          $_SESSION['login_user'] = $email;
          
-         header("location: welcome.php"); //redirects to welcome page
+         header("location: quiz.php"); //redirects to welcome page
       }else {if($count == 1) {
           header("Location:error.php?error_id=S106"); exit();
         echo "Please confirm your account first.";
