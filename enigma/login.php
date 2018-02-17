@@ -90,6 +90,19 @@ exit();
     background-size:     cover;                      /* <------ */
     background-repeat:   no-repeat;
     background-position: center center;">
+    <script type="text/javascript">
+    	function myFunction()
+    	{		
+		    var x = document.getElementById("passwd");
+		    if (x.type === "password") {
+		        x.type = "text";
+		    } else {
+		        x.type = "password";
+		    }
+		}    	
+    </script>
+
+
 <div class="login-box">
 	<br><br>
   <div class="login-logo">
@@ -106,10 +119,25 @@ exit();
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input name="password" type="password" class="form-control" placeholder="Password">
+        <input name="password" type="password" id="passwd" class="form-control" placeholder="Password">
+        <!-- 
+        <div style="color: white">
+        	<input type="checkbox" onclick="myFunction()">Show Password
+        </div> -->
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
+        
+
+		<div>
+          <div class="checkbox icheck">
+            <label style="color: white">
+              <input type="checkbox" onclick="myFunction()"> Show Password
+            </label>
+          </div>
+        </div>
+
+
         <!-- <div class="col-xs-8"> -->
         <div>
           <div class="checkbox icheck">
