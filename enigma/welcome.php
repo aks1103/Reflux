@@ -1,7 +1,7 @@
 <?php
    include('session.php');
 
-   $sql = "SELECT isStarted FROM participants WHERE email = '$login_session'";
+   $sql = "SELECT isStarted FROM enigma_participants WHERE email = '$login_session'";
    $isStarted = 0;
    $retval = $db->query($sql);
     if($retval->num_rows > 0 ){
@@ -11,7 +11,8 @@
 
 
     }else{
-    	echo "Invalid credentials or session expired.";
+    	echo "Invalid credentials or session expired.\n";
+    	echo "NOt";
     }
 
 
@@ -22,7 +23,7 @@
 
     }
 
-    $sql = "SELECT name , email , phone FROM participants WHERE email = '$login_session'";
+    $sql = "SELECT name , email , phone FROM enigma_participants WHERE email = '$login_session'";
     $details_r = $db->query($sql);
     $details = $details_r->fetch_assoc();
 
